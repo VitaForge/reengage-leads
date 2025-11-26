@@ -1,6 +1,5 @@
 import { ImageResponse } from "@vercel/og";
 
-export const runtime = "edge";
 export const alt =
 	"ReEngage - Never Let a Customer Forget Their Annual Service Again";
 export const size = {
@@ -9,7 +8,7 @@ export const size = {
 };
 export const contentType = "image/png";
 
-export default async function GET() {
+export default async function Image() {
 	return new ImageResponse(
 		(
 			<div
