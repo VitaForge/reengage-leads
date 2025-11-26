@@ -88,6 +88,8 @@ export default async function Image() {
 						</div>
 						<div
 							style={{
+								display: "flex",
+								flexDirection: "column",
 								fontSize: "72px",
 								fontWeight: "bold",
 								color: "#FF6B35",
