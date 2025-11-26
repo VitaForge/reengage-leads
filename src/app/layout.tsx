@@ -1,3 +1,5 @@
+import { Toaster } from "sonner";
+
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 
@@ -93,6 +95,7 @@ export default function RootLayout({
 				<PostHogProvider>
 					<TRPCReactProvider>
 						<CookieManagerWrapper>{children}</CookieManagerWrapper>
+						<Toaster position="top-center" richColors />
 					</TRPCReactProvider>
 				</PostHogProvider>
 			</body>

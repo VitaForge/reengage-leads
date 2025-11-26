@@ -52,6 +52,9 @@ export function RequestPasswordResetForm() {
 					return;
 				}
 
+				toast.success("Password reset email sent! Please check your inbox.", {
+					duration: 5000,
+				});
 				setEmailSent(true);
 			} catch (error: any) {
 				console.error("Password reset error:", error);

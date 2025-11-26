@@ -119,6 +119,11 @@ export function SignInForm({
 					posthog?.capture(AnalyticsEvent.LOGIN, {
 						method: "email",
 					});
+
+					// Show success message
+					toast.success("Signed in successfully!", {
+						duration: 3000,
+					});
 				})
 				.catch((error: any) => {
 					console.error("Authentication error:", error);

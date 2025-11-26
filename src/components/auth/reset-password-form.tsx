@@ -75,6 +75,9 @@ export function ResetPasswordForm({ token: initialToken }: { token: string }) {
 						return;
 					}
 
+					toast.success("Password reset successfully!", {
+						duration: 3000,
+					});
 					setSuccess(true);
 				})
 				.catch((error: any) => {
