@@ -88,12 +88,12 @@ export function SignUpForm({
 						return;
 					}
 
-					// Fetch user session to get user data
+					// Fetch user session to get user data for PostHog identification
 					try {
 						const session = await authClient.getSession();
 						if (session?.data?.user) {
 							const user = session.data.user;
-							// Identify user in PostHog
+							// Identify user in PostHog before signing out
 							posthog?.identify(user.id, {
 								email: user.email,
 								name: user.name,
@@ -111,6 +111,15 @@ export function SignUpForm({
 					posthog?.capture(AnalyticsEvent.REGISTER, {
 						method: "email",
 					});
+
+					// Sign out to ensure user needs to sign in
+					await authClient.signOut();
+
+					// Redirect to sign-in page with success message
+					const signInUrl = callbackURL
+						? `/sign-in?accountCreated=true&callbackUrl=${encodeURIComponent(callbackURL)}`
+						: `/sign-in?accountCreated=true`;
+					router.push(signInUrl);
 				})
 				.catch((error: any) => {
 					console.error("Authentication error:", error);

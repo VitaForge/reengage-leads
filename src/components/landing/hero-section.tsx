@@ -121,7 +121,7 @@ export function HeroSection() {
 		};
 	}, []);
 	return (
-		<section className="relative flex min-h-[calc(100vh-4rem)] items-center bg-[rgb(var(--st-dark-darker))] py-12 text-white md:py-16">
+		<section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-visible bg-[rgb(var(--st-dark-darker))] py-12 text-white md:py-16">
 			<div className="relative z-10 container mx-auto px-4 md:px-6">
 				<div className="grid items-center gap-12 md:grid-cols-2">
 					{/* Left Content */}
@@ -197,7 +197,7 @@ export function HeroSection() {
 			</div>
 
 			{/* Right Image - positioned absolutely from screen edge */}
-			<div className="absolute inset-y-0 right-0 hidden w-1/2 md:block">
+			<div className="absolute inset-y-0 right-0 hidden w-1/2 overflow-visible md:block">
 				<motion.div
 					initial={{ opacity: 0, x: 50 }}
 					animate={{ opacity: 1, x: 0 }}
@@ -206,21 +206,23 @@ export function HeroSection() {
 						ease: [0.16, 1, 0.3, 1],
 						delay: 0.3,
 					}}
-					className="relative h-full w-full overflow-hidden"
+					className="relative h-full w-full"
 				>
-					<Image
-						alt="AI-Powered Customer Re-engagement"
-						className="h-full w-full scale-110 object-cover object-[60%_center]"
-						fill
-						src="/hero.jpg"
-					/>
-					{/* Fade overlays to blend with background */}
-					{/* Top fade */}
-					<div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[rgb(var(--st-dark-darker))] to-transparent" />
-					{/* Bottom fade */}
-					<div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[rgb(var(--st-dark-darker))] to-transparent" />
-					{/* Left fade */}
-					<div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[rgb(var(--st-dark-darker))] to-transparent" />
+					<div className="relative h-full w-full overflow-hidden">
+						<Image
+							alt="AI-Powered Customer Re-engagement"
+							className="h-full w-full scale-110 object-cover object-[60%_center]"
+							fill
+							src="/hero.jpg"
+						/>
+						{/* Fade overlays to blend with background */}
+						{/* Top fade */}
+						<div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[rgb(var(--st-dark-darker))] to-transparent" />
+						{/* Bottom fade */}
+						<div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[rgb(var(--st-dark-darker))] to-transparent" />
+						{/* Left fade */}
+						<div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[rgb(var(--st-dark-darker))] to-transparent" />
+					</div>
 
 					{/* Conversation Chat Bubbles */}
 					<motion.div
@@ -231,7 +233,7 @@ export function HeroSection() {
 							ease: [0.16, 1, 0.3, 1],
 							delay: 1.2,
 						}}
-						className="pointer-events-none absolute top-8 left-8 max-w-md"
+						className="pointer-events-none absolute top-32 -left-16 z-30 max-w-md"
 					>
 						<div className="flex flex-col gap-3">
 							<AnimatePresence mode="popLayout">

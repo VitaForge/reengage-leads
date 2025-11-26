@@ -6,7 +6,7 @@ import { usePostHog } from "posthog-js/react";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
 
@@ -30,13 +30,26 @@ import { AuthLoadingState } from "./auth-loading-state";
 
 export function SignInForm({
 	callbackURL = "/dashboard",
+	showAccountCreatedMessage = false,
 }: {
 	callbackURL?: string;
+	showAccountCreatedMessage?: boolean;
 }) {
 	const posthog = usePostHog();
 	const [loading, setLoading] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
 	const router = useRouter();
+
+	useEffect(() => {
+		if (showAccountCreatedMessage) {
+			toast.success(
+				"Account created successfully! Please sign in to continue.",
+				{
+					duration: 5000,
+				}
+			);
+		}
+	}, [showAccountCreatedMessage]);
 
 	const signInSchema = z.object({
 		email: z.string().superRefine((val, ctx) => {

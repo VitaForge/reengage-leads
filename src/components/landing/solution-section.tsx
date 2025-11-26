@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Bell, Repeat, Zap } from "lucide-react";
 
+import { WorkflowVisualization } from "./workflow-visualization";
+
 const containerVariants = {
 	hidden: { opacity: 0 },
 	visible: {
@@ -45,26 +47,15 @@ export function SolutionSection() {
 					</p>
 				</motion.div>
 
-				{/* Central Video */}
+				{/* Workflow Visualization */}
 				<motion.div
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, amount: 0.3 }}
 					variants={itemVariants}
-					className="mx-auto mb-16 max-w-4xl"
+					className="mx-auto mb-16 max-w-5xl"
 				>
-					<div
-						className="relative overflow-hidden rounded-2xl bg-gray-200"
-						style={{ paddingBottom: "56.25%" }}
-					>
-						<iframe
-							className="absolute inset-0 h-full w-full"
-							src="https://www.youtube.com/embed/FG1Fa-t4AEQ?autoplay=1&loop=1&playlist=FG1Fa-t4AEQ&mute=1&controls=1"
-							title="Solution Video"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowFullScreen
-						/>
-					</div>
+					<WorkflowVisualization />
 				</motion.div>
 
 				{/* Benefits Grid */}

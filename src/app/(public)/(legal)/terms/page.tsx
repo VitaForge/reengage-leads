@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Footer } from "@/components/landing/footer";
 import { Navbar } from "@/components/landing/navbar";
+import { env } from "@/env";
 
 export const metadata: Metadata = {
 	title: "Terms of Service",
@@ -263,10 +264,13 @@ export default function TermsOfServicePage() {
 							</p>
 							<div className="mb-4 rounded-lg bg-gray-50 p-4">
 								<p className="text-gray-700">
-									<strong>Email:</strong> legal@reengage.com
-								</p>
-								<p className="text-gray-700">
-									<strong>Address:</strong> [Your Company Address]
+									<strong>Email:</strong>{" "}
+									<a
+										href={`mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+										className="text-[rgb(var(--st-orange))] hover:underline"
+									>
+										{env.NEXT_PUBLIC_CONTACT_EMAIL}
+									</a>
 								</p>
 							</div>
 						</section>

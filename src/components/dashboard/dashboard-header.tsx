@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
+
 import Link from "next/link";
 
 import { UserMenu } from "@/components/dashboard/user-menu";
@@ -33,4 +34,3 @@ export function DashboardHeader({
 		</div>
 	);
 }
-

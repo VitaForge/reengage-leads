@@ -48,11 +48,11 @@ export const metadata: Metadata = {
 			"AI-powered voice and SMS reminders that automatically re-engage your customers and drive repeat bookings. Turn forgotten service appointments into revenue without lifting a finger.",
 		images: [
 			{
-				url: `${baseUrl}/opengraph-image`,
+				url: `/og-image.jpeg`,
 				width: 1200,
 				height: 630,
 				alt: "ReEngage - AI-Powered Customer Re-engagement",
-				type: "image/png",
+				type: "image/jpeg",
 			},
 		],
 	},
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 		title: "ReEngage - Never Let a Customer Forget Their Annual Service Again",
 		description:
 			"AI-powered voice and SMS reminders that automatically re-engage your customers and drive repeat bookings.",
-		images: [`${baseUrl}/og-image.jpg`],
+		images: [`/og-image.jpeg`],
 		creator: "@reengage",
 		site: "@reengage",
 	},
