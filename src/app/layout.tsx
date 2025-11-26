@@ -7,7 +7,7 @@ import { env } from "@/env";
 import "@/styles/globals.css";
 import { TRPCReactProvider } from "@/trpc/react";
 
-const baseUrl = env.NEXT_PUBLIC_SITE_URL || "https://reengage-leads.com";
+const baseUrl = env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata: Metadata = {
 	title: {

@@ -51,10 +51,10 @@ export const env = createEnv({
 	 * `NEXT_PUBLIC_`.
 	 */
 	client: {
-		NEXT_PUBLIC_POSTHOG_KEY: z.string().optional(),
-		NEXT_PUBLIC_POSTHOG_HOST: z.string().url().optional(),
+		NEXT_PUBLIC_POSTHOG_KEY: z.string(),
+		NEXT_PUBLIC_POSTHOG_HOST: z.string().url(),
 		NEXT_PUBLIC_CONTACT_EMAIL: z.string().email(),
-		NEXT_PUBLIC_SITE_URL: z.string().url().optional(),
+		NEXT_PUBLIC_SITE_URL: z.string().url(),
 	},
 
 	/**
