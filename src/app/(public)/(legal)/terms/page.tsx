@@ -1,10 +1,19 @@
+import type { Metadata } from "next";
+
 import { Footer } from "@/components/landing/footer";
 import { Navbar } from "@/components/landing/navbar";
 
-export const metadata = {
-	title: "Terms of Service - ReEngage",
+export const metadata: Metadata = {
+	title: "Terms of Service",
 	description:
 		"Terms of Service for ReEngage - AI-powered customer re-engagement platform",
+	alternates: {
+		canonical: "/terms",
+	},
+	robots: {
+		index: false,
+		follow: false,
+	},
 };
 
 export default function TermsOfServicePage() {

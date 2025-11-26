@@ -1,16 +1,26 @@
+import type { Metadata } from "next";
+
 import { Footer } from "@/components/landing/footer";
 import { Navbar } from "@/components/landing/navbar";
 
-export const metadata = {
-	title: "Privacy Policy - ReEngage",
-	description: "Privacy Policy for ReEngage - AI-powered customer re-engagement platform",
+export const metadata: Metadata = {
+	title: "Privacy Policy",
+	description:
+		"Privacy Policy for ReEngage - AI-powered customer re-engagement platform",
+	alternates: {
+		canonical: "/privacy",
+	},
+	robots: {
+		index: false,
+		follow: false,
+	},
 };
 
 export default function PrivacyPolicyPage() {
 	return (
 		<div className="min-h-screen">
-			<Navbar />
-			<main className="container mx-auto px-4 py-8 md:px-6 md:py-12">
+				<Navbar />
+				<main className="container mx-auto px-4 py-8 md:px-6 md:py-12">
 				<div className="mx-auto max-w-4xl">
 					<h1 className="mb-8 font-bold text-4xl">Privacy Policy</h1>
 					<p className="mb-8 text-gray-600 text-sm">

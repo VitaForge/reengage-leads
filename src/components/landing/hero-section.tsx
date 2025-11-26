@@ -126,24 +126,60 @@ export function HeroSection() {
 				<div className="grid items-center gap-12 md:grid-cols-2">
 					{/* Left Content */}
 					<div className="space-y-6">
-						<h1 className="text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
+						<motion.h1
+							initial={{ opacity: 0, y: 30 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.8,
+								ease: [0.16, 1, 0.3, 1],
+								delay: 0.2,
+							}}
+							className="text-4xl leading-tight font-bold md:text-5xl lg:text-6xl"
+						>
 							Turn forgotten appointments into{" "}
-							<Highlighter
-								action="underline"
-								color="rgb(var(--st-orange))"
-								strokeWidth={8}
-								animationDuration={800}
-								iterations={1}
+							<motion.span
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{
+									duration: 0.6,
+									delay: 0.8,
+								}}
 							>
-								recurring revenue
-							</Highlighter>
-						</h1>
-						<p className="text-lg text-gray-300 md:text-xl">
+								<Highlighter
+									action="underline"
+									color="rgb(var(--st-orange))"
+									strokeWidth={8}
+									animationDuration={800}
+									iterations={1}
+								>
+									recurring revenue
+								</Highlighter>
+							</motion.span>
+						</motion.h1>
+						<motion.p
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.7,
+								ease: [0.16, 1, 0.3, 1],
+								delay: 0.5,
+							}}
+							className="text-lg text-gray-300 md:text-xl"
+						>
 							ReEngage automatically reaches out to your customers with AI voice
 							calls and SMS reminders, turning reminders into bookings on
 							autopilot.
-						</p>
-						<div className="mt-16 flex max-w-md">
+						</motion.p>
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.7,
+								ease: [0.16, 1, 0.3, 1],
+								delay: 0.8,
+							}}
+							className="mt-16 flex max-w-md"
+						>
 							<Button
 								asChild
 								className="h-12 bg-[rgb(var(--st-red))] px-8 text-base font-semibold text-white hover:bg-[rgb(var(--st-red-hover))]"
@@ -155,14 +191,23 @@ export function HeroSection() {
 									<Rocket className="h-5 w-5" />
 								</Link>
 							</Button>
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>
 
 			{/* Right Image - positioned absolutely from screen edge */}
 			<div className="absolute inset-y-0 right-0 hidden w-1/2 md:block">
-				<div className="relative h-full w-full overflow-hidden">
+				<motion.div
+					initial={{ opacity: 0, x: 50 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{
+						duration: 1,
+						ease: [0.16, 1, 0.3, 1],
+						delay: 0.3,
+					}}
+					className="relative h-full w-full overflow-hidden"
+				>
 					<Image
 						alt="AI-Powered Customer Re-engagement"
 						className="h-full w-full scale-110 object-cover object-[60%_center]"
@@ -178,7 +223,16 @@ export function HeroSection() {
 					<div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[rgb(var(--st-dark-darker))] to-transparent" />
 
 					{/* Conversation Chat Bubbles */}
-					<div className="pointer-events-none absolute top-8 left-8 max-w-md">
+					<motion.div
+						initial={{ opacity: 0, scale: 0.9 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{
+							duration: 0.6,
+							ease: [0.16, 1, 0.3, 1],
+							delay: 1.2,
+						}}
+						className="pointer-events-none absolute top-8 left-8 max-w-md"
+					>
 						<div className="flex flex-col gap-3">
 							<AnimatePresence mode="popLayout">
 								{visibleMessages.map((messageIndex) => {
@@ -194,14 +248,23 @@ export function HeroSection() {
 												opacity: 0,
 												y: 10,
 												scale: 0.95,
+												x: isAgent ? -20 : 20,
 											}}
 											animate={{
 												opacity: 1,
 												y: 0,
 												scale: 1,
+												x: 0,
+											}}
+											exit={{
+												opacity: 0,
+												scale: 0.9,
+												transition: {
+													duration: 0.2,
+												},
 											}}
 											transition={{
-												duration: 0.4,
+												duration: 0.5,
 												type: "spring",
 												stiffness: 300,
 												damping: 25,
@@ -224,8 +287,8 @@ export function HeroSection() {
 								})}
 							</AnimatePresence>
 						</div>
-					</div>
-				</div>
+					</motion.div>
+				</motion.div>
 			</div>
 		</section>
 	);
