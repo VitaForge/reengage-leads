@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* THICCCBOI Font Family */
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-Thin.woff2") format("woff2");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-ExtraBold.woff2") format("woff2");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-Black.woff2") format("woff2");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "THICCCBOI";
+	src: url("/fonts/THICCCBOI-ThicccAF.woff2") format("woff2");
+	font-weight: 950;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--font-sans:
+		"THICCCBOI", ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+	/* ServiceTitan Color Scheme */
+	--background: 255 255 255;
+	--foreground: 33 37 41;
+	--card: 255 255 255;
+	--card-foreground: 33 37 41;
+	--popover: 255 255 255;
+	--popover-foreground: 33 37 41;
+	--primary: 0 205 185; /* Teal Primary */
+	--primary-foreground: 255 255 255;
+	--secondary: 240 242 245;
+	--secondary-foreground: 33 37 41;
+	--muted: 240 242 245;
+	--muted-foreground: 108 117 125;
+	--accent: 240 242 245;
+	--accent-foreground: 33 37 41;
+	--destructive: 220 53 69;
+	--destructive-foreground: 255 255 255;
+	--border: 226 232 240;
+	--input: 226 232 240;
+	--ring: 0 205 185;
+	--radius: 0.5rem;
+
+	/* ServiceTitan Dark Gray */
+	--st-dark: 52 58 64;
+	--st-dark-foreground: 255 255 255;
+	
+	/* Custom Color Variables */
+	--st-dark-darker: 33 37 41;
+	--st-border: 73 80 87;
+	--st-orange: 0 205 185; /* Teal Primary */
+	--st-orange-hover: 0 182 162; /* Teal Hover */
+	--st-red: 0 205 185; /* Teal Primary */
+	--st-red-hover: 0 182 162; /* Teal Hover */
+	--st-blue: 33 150 243;
+	--st-blue-hover: 25 118 210;
+}
+
+@media (prefers-color-scheme: dark) {
+	@theme {
+		--background: 33 37 41;
+		--foreground: 255 255 255;
+		--card: 52 58 64;
+		--card-foreground: 255 255 255;
+		--popover: 52 58 64;
+		--popover-foreground: 255 255 255;
+		--secondary: 73 80 87;
+		--secondary-foreground: 255 255 255;
+		--muted: 73 80 87;
+		--muted-foreground: 173 181 189;
+		--accent: 73 80 87;
+		--accent-foreground: 255 255 255;
+		--border: 73 80 87;
+		--input: 73 80 87;
+	}
+}
+
+/* Global cursor pointer for buttons and links */
+button,
+a {
+	cursor: pointer;
+}
