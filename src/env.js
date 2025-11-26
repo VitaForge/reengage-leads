@@ -19,9 +19,8 @@ export const env = createEnv({
 			.default("development"),
 		POLAR_ACCESS_TOKEN: z.string(),
 		BETTER_AUTH_TRUSTED_ORIGINS: z
-			.string()
-			.url()
-			.default("http://localhost:3000"),
+			.array(z.string().url())
+			.default(["http://localhost:3000", "http://localhost:8787"]),
 	},
 
 	/**
