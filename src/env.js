@@ -18,6 +18,9 @@ export const env = createEnv({
 			.enum(["development", "test", "production"])
 			.default("development"),
 		POLAR_ACCESS_TOKEN: z.string(),
+		BETTER_AUTH_TRUSTED_ORIGINS: z
+			.array(z.string().url())
+			.default(["http://localhost:3000", "http://localhost:8787"]),
 	},
 
 	/**
@@ -46,6 +49,7 @@ export const env = createEnv({
 		NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
 		NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
 		NEXT_PUBLIC_CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
+		BETTER_AUTH_TRUSTED_ORIGINS: process.env.BETTER_AUTH_TRUSTED_ORIGINS,
 	},
 	/**
 	 * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

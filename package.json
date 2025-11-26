@@ -16,14 +16,16 @@
 		"dev": "next dev --turbo",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"preview": "next build && next start",
 		"start": "next start",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+		"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
 	},
 	"dependencies": {
 		"@auth/drizzle-adapter": "^1.7.2",
+		"@opennextjs/cloudflare": "^1.13.1",
 		"@polar-sh/better-auth": "^1.5.0",
-		"postgres": "^3.4.5",
 		"@polar-sh/sdk": "^0.41.5",
 		"@posthog/react": "^1.5.0",
 		"@radix-ui/react-dialog": "^1.1.15",
@@ -47,6 +49,7 @@
 		"framer-motion": "^12.23.24",
 		"lucide-react": "^0.554.0",
 		"next": "^15.2.3",
+		"postgres": "^3.4.5",
 		"posthog-js": "^1.298.0",
 		"react": "^19.0.0",
 		"react-cookie-manager": "^4.0.3",
@@ -71,7 +74,8 @@
 		"prettier": "^3.6.2",
 		"prettier-plugin-tailwindcss": "^0.7.1",
 		"tailwindcss": "^4.0.15",
-		"typescript": "^5.8.2"
+		"typescript": "^5.8.2",
+		"wrangler": "^4.50.0"
 	},
 	"ct3aMetadata": {
 		"initVersion": "7.40.0"

@@ -1,10 +1,5 @@
-import type { CustomerStateSubscription } from "@polar-sh/sdk/models/components/customerstatesubscription.js";
-
-import { headers } from "next/headers";
-
 import { SettingsDeleteAccount } from "@/components/dashboard/settings/settings-delete-account";
 import { SettingsProfileSection } from "@/components/dashboard/settings/settings-profile-section";
-import { SettingsSubscriptionCard } from "@/components/dashboard/settings/settings-subscription-card";
 import {
 	Card,
 	CardContent,

@@ -1,12 +1,14 @@
 "use client";
 
 import { LogOut, Settings, User } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
 import { toast } from "sonner";
 
-import { authClient } from "@/server/better-auth/client";
+import { useEffect, useRef, useState } from "react";
+
+import { useRouter } from "next/navigation";
+
 import { Button } from "@/components/ui/button";
+import { authClient } from "@/server/better-auth/client";
 
 interface UserMenuProps {
 	user: {
@@ -52,7 +54,7 @@ export function UserMenu({ user }: UserMenuProps) {
 		if (name) {
 			const parts = name.split(" ");
 			if (parts.length >= 2) {
-				return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+				return `${parts?.[0]?.[0]}${parts?.[parts.length - 1]?.[0]}`.toUpperCase();
 			}
 			return name[0]?.toUpperCase() || email[0]?.toUpperCase() || "U";
 		}
@@ -81,7 +83,7 @@ export function UserMenu({ user }: UserMenuProps) {
 			</Button>
 
 			{isOpen && (
-				<div className="absolute right-0 top-12 z-50 w-56 rounded-md border border-gray-200 bg-white shadow-lg">
+				<div className="absolute top-12 right-0 z-50 w-56 rounded-md border border-gray-200 bg-white shadow-lg">
 					<div className="p-2">
 						<div className="mb-2 border-b border-gray-200 px-3 py-2">
 							<p className="text-sm font-semibold text-gray-900">
@@ -114,4 +116,3 @@ export function UserMenu({ user }: UserMenuProps) {
 		</div>
 	);
 }
-
