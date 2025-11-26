@@ -1,7 +1,20 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
-import { parseCommaSeparatedString } from "@/lib/env-utils";
+/**
+ * Splits a comma-separated string into an array of trimmed strings
+ * @param {string | undefined} value - The comma-separated string to split
+ * @returns {string[]} Array of trimmed strings, or empty array if value is empty/undefined
+ */
+function parseCommaSeparatedString(value) {
+	if (!value || value.trim() === "") {
+		return [];
+	}
+	return value
+		.split(",")
+		.map((item) => item.trim())
+		.filter((item) => item.length > 0);
+}
 
 export const env = createEnv({
 	/**
