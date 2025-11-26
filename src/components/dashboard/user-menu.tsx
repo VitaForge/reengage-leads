@@ -42,8 +42,9 @@ export function UserMenu({ user }: UserMenuProps) {
 	const handleLogout = async () => {
 		try {
 			await authClient.signOut();
-			toast.success("Signed out successfully");
-			router.push("/");
+			// Use window.location to force a full page reload and clear all server-side caches
+			// This ensures the session cache is cleared before navigating
+			window.location.href = "/";
 		} catch (error) {
 			console.error("Logout error:", error);
 			toast.error("Failed to sign out");
