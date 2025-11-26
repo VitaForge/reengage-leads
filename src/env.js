@@ -1,6 +1,8 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
+import { parseCommaSeparatedString } from "@/lib/env-utils";
+
 export const env = createEnv({
 	/**
 	 * Specify your server-side environment variables schema here. This way you can ensure the app
@@ -19,8 +21,15 @@ export const env = createEnv({
 			.default("development"),
 		POLAR_ACCESS_TOKEN: z.string(),
 		BETTER_AUTH_TRUSTED_ORIGINS: z
-			.array(z.string().url())
-			.default(["http://localhost:3000", "http://localhost:8787"]),
+			.string()
+			.transform((val) => {
+				const parsed = parseCommaSeparatedString(val);
+				return parsed.length > 0
+					? parsed
+					: ["http://localhost:3000", "http://localhost:8787"];
+			})
+			.pipe(z.array(z.string().url()))
+			.default("http://localhost:3000,http://localhost:8787"),
 	},
 
 	/**
