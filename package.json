@@ -17,14 +17,10 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"start": "next start",
-		"typecheck": "tsc --noEmit",
-		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-		"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@auth/drizzle-adapter": "^1.7.2",
-		"@opennextjs/cloudflare": "^1.13.1",
 		"@polar-sh/better-auth": "^1.5.0",
 		"@polar-sh/sdk": "^0.41.5",
 		"@posthog/react": "^1.5.0",
@@ -74,8 +70,7 @@
 		"prettier": "^3.6.2",
 		"prettier-plugin-tailwindcss": "^0.7.1",
 		"tailwindcss": "^4.0.15",
-		"typescript": "^5.8.2",
-		"wrangler": "^4.50.0"
+		"typescript": "^5.8.2"
 	},
 	"ct3aMetadata": {
 		"initVersion": "7.40.0"

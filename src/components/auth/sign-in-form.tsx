@@ -2,6 +2,7 @@
 
 import { useForm } from "@tanstack/react-form";
 import { Eye, EyeOff } from "lucide-react";
+import { usePostHog } from "posthog-js/react";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -17,6 +18,7 @@ import {
 	FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { AnalyticsEvent } from "@/lib/analytics";
 import { authClient } from "@/server/better-auth/client";
 
 import { AuthDivider } from "./auth-divider";
@@ -31,6 +33,7 @@ export function SignInForm({
 }: {
 	callbackURL?: string;
 }) {
+	const posthog = usePostHog();
 	const [loading, setLoading] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
 	const router = useRouter();
@@ -71,7 +74,7 @@ export function SignInForm({
 					password: value.password,
 					callbackURL: callbackURL,
 				})
-				.then((result) => {
+				.then(async (result) => {
 					if (result?.error) {
 						toast.error(result.error.message || "Failed to sign in", {
 							duration: 5000,
@@ -79,6 +82,30 @@ export function SignInForm({
 						setLoading(false);
 						return;
 					}
+
+					// Fetch user session to get user data
+					try {
+						const session = await authClient.getSession();
+						if (session?.data?.user) {
+							const user = session.data.user;
+							// Identify user in PostHog
+							posthog?.identify(user.id, {
+								email: user.email,
+								name: user.name,
+								emailVerified: user.emailVerified,
+							});
+						}
+					} catch (error) {
+						console.error(
+							"Failed to get session for PostHog identification:",
+							error
+						);
+					}
+
+					// Track successful login
+					posthog?.capture(AnalyticsEvent.LOGIN, {
+						method: "email",
+					});
 				})
 				.catch((error: any) => {
 					console.error("Authentication error:", error);

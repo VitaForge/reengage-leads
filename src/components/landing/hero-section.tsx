@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { Rocket } from "lucide-react";
+import { usePostHog } from "posthog-js/react";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -10,6 +11,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Highlighter } from "@/components/ui/highlighter";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 const conversation = [
 	{
@@ -69,9 +71,17 @@ const conversation = [
 ];
 
 export function HeroSection() {
+	const posthog = usePostHog();
 	const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
 	const nextMessageIndexRef = useRef(0);
 	const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+	const handleCTAClick = () => {
+		posthog?.capture(AnalyticsEvent.CTA_CLICK, {
+			location: "hero_section",
+			cta_text: "Start Re-engaging Leads",
+		});
+	};
 
 	useEffect(() => {
 		const showNextMessage = () => {
@@ -138,6 +148,7 @@ export function HeroSection() {
 								asChild
 								className="h-12 bg-[rgb(var(--st-red))] px-8 text-base font-semibold text-white hover:bg-[rgb(var(--st-red-hover))]"
 								size="lg"
+								onClick={handleCTAClick}
 							>
 								<Link href="/sign-up" className="flex items-center gap-2">
 									Start Re-engaging Leads

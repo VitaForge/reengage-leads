@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, Rocket } from "lucide-react";
+import { usePostHog } from "posthog-js/react";
 
 import { useRouter } from "next/navigation";
 
@@ -16,11 +17,27 @@ import {
 } from "@/components/ui/card";
 import { PRICING_PLANS } from "@/config/pricing";
 import { env } from "@/env";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 export function PricingSection() {
+	const posthog = usePostHog();
 	const router = useRouter();
 
 	const handleGetStarted = (planName: string) => {
+		const plan = PRICING_PLANS.find((p) => p.name === planName);
+
+		// Track plan selection
+		posthog?.capture(AnalyticsEvent.PLAN_SELECTED, {
+			plan_name: planName,
+			plan_price: plan?.price,
+			plan_period: plan?.period,
+		});
+
+		// Track checkout started
+		posthog?.capture(AnalyticsEvent.CHECKOUT_STARTED, {
+			plan_name: planName,
+		});
+
 		router.push(`/checkout?plan=${encodeURIComponent(planName)}`);
 	};
 

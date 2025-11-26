@@ -1,0 +1,16 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/trpc/[trpc]/route": "app/api/trpc/[trpc]/route.js",
+  "/api/auth/[...all]/route": "app/api/auth/[...all]/route.js",
+  "/(public)/page": "app/(public)/page.js",
+  "/(public)/pricing/page": "app/(public)/pricing/page.js",
+  "/(public)/(legal)/privacy/page": "app/(public)/(legal)/privacy/page.js",
+  "/(public)/(legal)/terms/page": "app/(public)/(legal)/terms/page.js",
+  "/(auth)/reset-password/page": "app/(auth)/reset-password/page.js",
+  "/(auth)/request-password-reset/page": "app/(auth)/request-password-reset/page.js",
+  "/(auth)/sign-up/page": "app/(auth)/sign-up/page.js",
+  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
+  "/(protected)/dashboard/settings/page": "app/(protected)/dashboard/settings/page.js",
+  "/(protected)/dashboard/page": "app/(protected)/dashboard/page.js",
+  "/(protected)/checkout/page": "app/(protected)/checkout/page.js"
+}

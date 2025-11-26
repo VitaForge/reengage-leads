@@ -1,9 +1,11 @@
 "use client";
 
+import { usePostHog } from "posthog-js/react";
 import { motion } from "framer-motion";
 
 import Link from "next/link";
 
+import { AnalyticsEvent } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 
 const fadeInUp = {
@@ -18,6 +20,15 @@ const fadeInUp = {
 };
 
 export function CTASection() {
+	const posthog = usePostHog();
+
+	const handleCTAClick = () => {
+		posthog?.capture(AnalyticsEvent.CTA_CLICK, {
+			location: "cta_section",
+			cta_text: "Get Started",
+		});
+	};
+
 	return (
 		<section className="bg-gradient-to-br from-[rgb(var(--st-orange))]/10 to-[rgb(var(--st-red))]/10 py-20">
 			<div className="container mx-auto px-4 md:px-6">
@@ -40,6 +51,7 @@ export function CTASection() {
 						asChild
 						className="bg-[rgb(var(--st-orange))] px-8 text-base font-semibold text-white hover:bg-[rgb(var(--st-orange-hover))]"
 						size="lg"
+						onClick={handleCTAClick}
 					>
 						<Link href="/sign-up">Get Started</Link>
 					</Button>

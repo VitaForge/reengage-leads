@@ -43,10 +43,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-
 # idea files
 .idea
-
-.wrangler*
-.open-next*
-.vscode*
