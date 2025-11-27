@@ -39,11 +39,11 @@ export function SolutionSection() {
 					className="mx-auto mb-12 max-w-3xl text-center"
 				>
 					<h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-						Win more business, automatically.
+						We handle your customer re-engagement for you
 					</h2>
 					<p className="text-lg text-gray-600">
-						Automate customer re-engagement with AI voice calls, SMS, and email
-						reminders that drive repeat bookings—all on autopilot.
+						Our team manages AI voice calls, SMS, and email reminders that drive repeat
+						bookings. You focus on your business—we handle the re-engagement.
 					</p>
 				</motion.div>
 
@@ -91,11 +91,11 @@ export function SolutionSection() {
 								</div>
 							</div>
 							<h3 className="mb-3 text-xl font-bold text-gray-900">
-								No more manual follow-ups
+								Hands-off service delivery
 							</h3>
 							<p className="text-sm text-gray-600">
-								Launch automated campaigns with just a few clicks, freeing you
-								up to focus on delivering top-notch service.
+								We handle everything from setup to execution. No training, no
+								software to learn—just results delivered to your business.
 							</p>
 						</motion.div>
 

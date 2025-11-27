@@ -13,27 +13,27 @@ const faqs = [
 	{
 		question: "How does the AI voice call booking work?",
 		answer:
-			"ReEngage uses advanced AI to make personalized voice calls to your customers. During the call, customers can confirm or schedule their service appointment directly - no back-and-forth emails or phone tag required. The AI handles the entire conversation naturally and can book appointments in real-time.",
+			"We use advanced AI to make personalized voice calls to your customers on your behalf. During the call, customers can confirm or schedule their service appointment directly - no back-and-forth emails or phone tag required. Our AI handles the entire conversation naturally and can book appointments in real-time.",
 	},
 	{
 		question: "Can I customize the voice script?",
 		answer:
-			"Yes, you can tailor the AI voice script for each service type or customer segment. Our platform allows you to customize the messaging to match your brand voice and specific service offerings. You can also test different scripts with A/B testing to find what works best.",
+			"Yes, we work with you to tailor the AI voice script for each service type or customer segment. We customize the messaging to match your brand voice and specific service offerings. We can also test different scripts to find what works best for your business.",
 	},
 	{
 		question: "What happens if a customer doesn't answer the call?",
 		answer:
-			"If a customer doesn't answer the AI voice call, our system automatically sends SMS and email follow-ups. You can configure multiple reminder attempts and customize the timing of follow-ups based on your preferences. The system ensures no customer falls through the cracks.",
+			"If a customer doesn't answer the AI voice call, we automatically send SMS and email follow-ups. We configure multiple reminder attempts and customize the timing of follow-ups based on your preferences. We ensure no customer falls through the cracks.",
 	},
 	{
-		question: "How many customers can I import?",
+		question: "How many customers can you handle?",
 		answer:
-			"The system scales to handle hundreds or thousands of contacts. You can import unlimited customers via CSV upload. There are no hard limits on the number of customers you can manage, making it perfect for businesses of all sizes.",
+			"Our service scales to handle hundreds or thousands of contacts. We can import unlimited customers via CSV upload or integrate with your existing systems. There are no hard limits on the number of customers we can manage, making it perfect for businesses of all sizes.",
 	},
 	{
-		question: "Does it integrate with my CRM?",
+		question: "Do you integrate with my CRM?",
 		answer:
-			"Currently, we support CSV import for easy customer upload. Integrations with popular CRMs like QuickBooks, Jobber, and others are coming soon. We're continuously adding new integrations based on customer feedback.",
+			"Yes, we can integrate with your existing CRM or accounting software. We support CSV import for easy customer upload, and we're continuously adding integrations with popular CRMs like QuickBooks, Jobber, and others. We'll work with you to set up the integration that works best for your business.",
 	},
 	{
 		question: "How does the booking work?",
@@ -61,9 +61,9 @@ const faqs = [
 			"The dashboard provides real-time insights including call completion rates, booking conversion rates, response rates by message type, customer engagement metrics, and revenue tracking. You can see which messages and calls are driving the most conversions and optimize your campaigns accordingly.",
 	},
 	{
-		question: "How quickly can I get started?",
+		question: "How quickly can we get started?",
 		answer:
-			"You can be up and running in minutes. Simply import your customer list via CSV, set up your service types and reminder schedules, and you're ready to go. The AI will start making calls and sending reminders automatically based on your configuration.",
+			"We can typically have your service up and running within a few days. We'll handle importing your customer list, setting up your service types and reminder schedules, and configuring everything to match your business needs. Once set up, we'll start making calls and sending reminders automatically.",
 	},
 	{
 		question: "Do customers know they're talking to an AI?",
@@ -73,7 +73,7 @@ const faqs = [
 ];
 
 export function FAQSection() {
-	const [openIndex, setOpenIndex] = useState<number | null>(0);
+	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
 	const fadeInUp = {
 		hidden: { opacity: 0, y: 20 },

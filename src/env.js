@@ -55,6 +55,7 @@ export const env = createEnv({
 		NEXT_PUBLIC_POSTHOG_HOST: z.string().url(),
 		NEXT_PUBLIC_CONTACT_EMAIL: z.string().email(),
 		NEXT_PUBLIC_SITE_URL: z.string().url(),
+		NEXT_PUBLIC_TALLY_FORM_URL: z.string().url().optional(),
 	},
 
 	/**
@@ -73,6 +74,7 @@ export const env = createEnv({
 		NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
 		NEXT_PUBLIC_CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
 		NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
+		NEXT_PUBLIC_TALLY_FORM_URL: process.env.NEXT_PUBLIC_TALLY_FORM_URL,
 		BETTER_AUTH_TRUSTED_ORIGINS: process.env.BETTER_AUTH_TRUSTED_ORIGINS,
 	},
 	/**

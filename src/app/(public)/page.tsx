@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { CTASection } from "@/components/landing/cta-section";
+import { CTASectionVariant } from "@/components/landing/cta-section-variant";
 import { FAQSection } from "@/components/landing/faq-section";
 import { FeaturesSection } from "@/components/landing/features-section";
 import { Footer } from "@/components/landing/footer";
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 		template: "%s | ReEngage",
 	},
 	description:
-		"AI-powered voice and SMS reminders that automatically re-engage your customers and drive repeat bookings. Turn forgotten service appointments into revenue without lifting a finger.",
+		"We handle your customer re-engagement with AI voice calls, SMS, and email reminders that drive repeat bookings. A done-for-you service that turns forgotten appointments into recurring revenue.",
 	keywords: [
 		"customer re-engagement",
 		"appointment reminders",
@@ -43,8 +44,9 @@ export default function Home() {
 				<SolutionSection />
 				<FeaturesSection />
 				<WorksBestForSection />
+				<CTASectionVariant />
 				{/* <TestimonialsSection /> */}
-				<PricingSection />
+				{/* <PricingSection /> */}
 				<FAQSection />
 				<CTASection />
 			</main>

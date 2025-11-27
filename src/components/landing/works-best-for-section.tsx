@@ -10,28 +10,28 @@ const profiles = [
 	{
 		title: "HVAC, Heating & Mechanical Contractors",
 		description:
-			"Automate annual tune-up reminders and keep customers booking on schedule.",
+			"We handle annual tune-up reminders and keep your customers booking on schedule.",
 		image: "/hvac.jpg",
 		imageAlt: "HVAC, Heating & Mechanical Contractors",
 	},
 	{
 		title: "Dental & Health Clinics",
 		description:
-			"Re-engage patients for annual check-ups and cleanings with automated AI reminders.",
+			"We re-engage patients for annual check-ups and cleanings with our AI reminder service.",
 		image: "/dental.jpg",
 		imageAlt: "Dental & Health Clinics",
 	},
 	{
 		title: "Pest Control & Home Maintenance Services",
 		description:
-			"Drive recurring bookings for annual inspections and seasonal treatments.",
+			"We drive recurring bookings for annual inspections and seasonal treatments.",
 		image: "/pest.jpg",
 		imageAlt: "Pest Control & Home Maintenance Services",
 	},
 	{
 		title: "Commercial Fleet Maintenance & Truck Service Shops",
 		description:
-			"Keep fleets compliant by automating reminders for DOT inspections and maintenance.",
+			"We keep fleets compliant by managing reminders for DOT inspections and maintenance.",
 		image: "/mechanic.jpg",
 		imageAlt: "Commercial Fleet Maintenance & Truck Service Shops",
 	},

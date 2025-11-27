@@ -7,11 +7,11 @@ import { usePostHog } from "posthog-js/react";
 import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Highlighter } from "@/components/ui/highlighter";
 import { AnalyticsEvent } from "@/lib/analytics";
+import { openTallyForm } from "@/lib/tally";
 
 const conversation = [
 	{
@@ -81,6 +81,7 @@ export function HeroSection() {
 			location: "hero_section",
 			cta_text: "Start Re-engaging Leads",
 		});
+		openTallyForm();
 	};
 
 	useEffect(() => {
@@ -125,7 +126,7 @@ export function HeroSection() {
 			<div className="relative z-10 container mx-auto px-4 md:px-6">
 				<div className="grid items-center gap-12 md:grid-cols-2">
 					{/* Left Content */}
-					<div className="space-y-6">
+					<div className="space-y-6 text-center md:text-left">
 						<motion.h1
 							initial={{ opacity: 0, y: 30 }}
 							animate={{ opacity: 1, y: 0 }}
@@ -134,7 +135,7 @@ export function HeroSection() {
 								ease: [0.16, 1, 0.3, 1],
 								delay: 0.2,
 							}}
-							className="text-4xl leading-tight font-bold md:text-5xl lg:text-6xl"
+							className="text-5xl leading-tight font-bold md:text-5xl lg:text-6xl"
 						>
 							Turn forgotten appointments into{" "}
 							<motion.span
@@ -164,12 +165,10 @@ export function HeroSection() {
 								ease: [0.16, 1, 0.3, 1],
 								delay: 0.5,
 							}}
-							className="text-lg text-gray-300 md:text-xl"
-						>
-							ReEngage automatically reaches out to your customers with AI voice
-							calls and SMS reminders, turning reminders into bookings on
-							autopilot.
-						</motion.p>
+						className="text-lg text-gray-300 md:text-xl"
+					>
+						A done-for-you service that turns forgotten appointments into recurring revenue.
+					</motion.p>
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
@@ -178,18 +177,17 @@ export function HeroSection() {
 								ease: [0.16, 1, 0.3, 1],
 								delay: 0.8,
 							}}
-							className="mt-16 flex max-w-md"
+							className="mt-16 flex max-w-md md:justify-start justify-center"
 						>
 							<Button
-								asChild
 								className="h-12 bg-[rgb(var(--st-red))] px-8 text-base font-semibold text-white hover:bg-[rgb(var(--st-red-hover))]"
 								size="lg"
 								onClick={handleCTAClick}
 							>
-								<Link href="/sign-up" className="flex items-center gap-2">
-									Start Re-engaging Leads
+								<span className="flex items-center gap-2">
+									Get Started
 									<Rocket className="h-5 w-5" />
-								</Link>
+								</span>
 							</Button>
 						</motion.div>
 					</div>

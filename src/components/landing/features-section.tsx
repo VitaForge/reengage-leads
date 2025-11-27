@@ -18,9 +18,9 @@ const itemVariants = {
 const steps = [
 	{
 		step: "STEP 1",
-		title: "Link your booking data",
+		title: "We connect your booking data",
 		description:
-			"Connect your CRM or accounting software so your customer's last booking can trigger your campaign messages automatically.",
+			"We integrate with your CRM or accounting software to track customer service history and automatically identify when customers are due for their next service.",
 		mockup: (
 			<motion.div
 				initial={{ opacity: 0, scale: 0.95 }}
@@ -183,9 +183,9 @@ const steps = [
 	},
 	{
 		step: "STEP 2",
-		title: "Set up your campaign",
+		title: "We set up and manage your campaigns",
 		description:
-			"Configure your AI voice calls, SMS, and email reminders. Customize messages and timing to match your service schedule.",
+			"We configure and manage your AI voice calls, SMS, and email reminders. We customize messages and timing to match your service schedule and brand voice.",
 		mockup: (
 			<motion.div
 				initial={{ opacity: 0, scale: 0.95 }}
@@ -288,9 +288,9 @@ const steps = [
 	},
 	{
 		step: "STEP 3",
-		title: "Track your repeat revenue",
+		title: "You receive regular performance reports",
 		description:
-			"Monitor the revenue earned from customers who re-book via your campaign using your real-time Insights dashboard.",
+			"We track and report on the revenue earned from customers who re-book via our campaigns. You get monthly reports showing bookings, revenue, and ROI.",
 		mockup: (
 			<motion.div
 				initial={{ opacity: 0, scale: 0.95 }}
@@ -478,11 +478,11 @@ export function FeaturesSection() {
 					className="mx-auto mb-16 max-w-3xl text-center"
 				>
 					<h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-						How it works
+						How we do it
 					</h2>
 					<p className="text-lg text-gray-600">
-						Launching your customer re-engagement campaign only takes a few
-						minutes.
+						We handle everything from setup to execution. Here's how our service
+						works for your business.
 					</p>
 				</motion.div>
 

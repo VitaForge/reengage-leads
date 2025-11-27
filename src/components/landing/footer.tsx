@@ -1,8 +1,11 @@
+"use client";
+
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 import Link from "next/link";
 
 import { Logo } from "@/components/branding/logo";
+import { openTallyForm } from "@/lib/tally";
 
 export function Footer() {
 	return (
@@ -50,14 +53,6 @@ export function Footer() {
 									Works Best For
 								</Link>
 							</li>
-							<li>
-								<Link
-									className="transition-colors hover:text-white"
-									href="#pricing"
-								>
-									Pricing
-								</Link>
-							</li>
 						</ul>
 					</div>
 
@@ -66,20 +61,13 @@ export function Footer() {
 						<h3 className="mb-4 font-semibold">Business</h3>
 						<ul className="space-y-2 text-sm font-semibold text-gray-400">
 							<li>
-								<Link
+								<button
 									className="transition-colors hover:text-white"
-									href="/sign-up"
+									onClick={openTallyForm}
+									type="button"
 								>
 									Get Started
-								</Link>
-							</li>
-							<li>
-								<Link
-									className="transition-colors hover:text-white"
-									href="#pricing"
-								>
-									Pricing
-								</Link>
+								</button>
 							</li>
 							<li>
 								<Link

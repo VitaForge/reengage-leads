@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Logo } from "@/components/branding/logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { openTallyForm } from "@/lib/tally";
 
 export function Navbar() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,7 +17,6 @@ export function Navbar() {
 
 	const navigationLinks = [
 		{ href: "#how-it-works", label: "How it Works" },
-		{ href: "#pricing", label: "Pricing" },
 		{ href: "#faq", label: "FAQ" },
 	];
 
@@ -83,7 +83,6 @@ export function Navbar() {
 					{/* Right Side */}
 					<div className="flex items-center gap-3">
 						<Button
-							asChild
 							className={cn(
 								"hidden border-2 bg-transparent px-6 font-semibold text-white hover:bg-white/10 md:inline-flex",
 								isScrolled
@@ -91,8 +90,9 @@ export function Navbar() {
 									: "border-white"
 							)}
 							variant="outline"
+							onClick={openTallyForm}
 						>
-							<Link href="/sign-up">Get Started</Link>
+							Get Started
 						</Button>
 
 						{/* Mobile Menu Button */}
@@ -146,7 +146,6 @@ export function Navbar() {
 								</Link>
 							))}
 							<Button
-								asChild
 								className={cn(
 									"mt-2 w-full border-2 bg-transparent font-semibold text-white hover:bg-white/10",
 									isScrolled
@@ -154,13 +153,12 @@ export function Navbar() {
 										: "border-white"
 								)}
 								variant="outline"
+								onClick={() => {
+									setIsMobileMenuOpen(false);
+									openTallyForm();
+								}}
 							>
-								<Link
-									href="/sign-up"
-									onClick={() => setIsMobileMenuOpen(false)}
-								>
-									Get Started
-								</Link>
+								Get Started
 							</Button>
 						</nav>
 					</div>

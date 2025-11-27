@@ -44,3 +44,4 @@ export function getPlanByName(planName: string): PricingPlan | undefined {
 	return PRICING_PLANS.find((plan) => plan.name === planName);
 }
 
+
